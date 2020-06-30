@@ -8,6 +8,10 @@ export default [
     text: "Über",
   },
   {
+    path: "program",
+    text: "Programm",
+  },
+  {
     path: "packages",
     text: "Pakete",
   },

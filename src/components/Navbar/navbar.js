@@ -56,7 +56,7 @@ const Navbar = () => {
                 spy={true}
                 smooth={true}
                 duration={500}
-                //offset={-50}
+                offset={-50}
                 onClick={toggleNav}
               >
                 {item.text}
