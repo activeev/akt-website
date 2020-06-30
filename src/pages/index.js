@@ -120,7 +120,7 @@ export default () => (
             <td>Abschlussplenum</td>
           </tr>
         </table>
-        <Link to="perks" smooth={true} duration={500}>
+        <Link to="packages" smooth={true} duration={500}>
           <Button cta="Mehr erfahren" />
         </Link>
       </TextBlock>
