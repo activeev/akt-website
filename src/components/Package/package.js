@@ -1,12 +1,18 @@
 import React from "react"
 import styled from "styled-components"
+import Button from "../Button/button"
+import { Link } from "react-scroll"
 
-const Package = ({ title, children, active }) => {
+const Package = ({ title, active, description, cta, linkTo, children }) => {
   return (
     <PackageWrapper className={active ? "active" : "not-active"}>
       <div className="content">
         <h2>{title}</h2>
         {children}
+        <p id="description">{description}</p>
+        <Link to={linkTo} smooth={true} duration={500}>
+          <Button cta={cta} />
+        </Link>
       </div>
     </PackageWrapper>
   )

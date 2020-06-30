@@ -138,7 +138,16 @@ export default () => (
             style: { verticalAlign: "middle", marginRight: "5px" },
           }}
         >
-          <Package title="Steuermann">
+          <Package
+            title="Steuermann"
+            active={false}
+            description="Mit diesem Paket hissen Sie Ihre Unternehmensflagge und lichten den Anker. Steigern Sie die
+            Bekanntheit Ihres Unternehmens und vergrößern Sie Ihre Reichweite deutschlandweit. Durch Merchandising und
+            Printwerbung können Sie die Aufmerksamkeit der Berater*innen auf sich ziehen und beiläufig während des
+            gesamten AKT präsent sein."
+            linkTo="contact"
+            cta="Jetzt anfragen"
+          >
             <table>
               <tbody>
                 <tr>
@@ -171,11 +180,17 @@ export default () => (
                 </tr>
               </tbody>
             </table>
-            <Link to="contact" smooth={true} duration={500}>
-              <Button cta="Jetzt anfragen" />
-            </Link>
           </Package>
-          <Package title="Kapitän" active={true}>
+          <Package
+            title="Kapitän"
+            active={true}
+            description="Nutzen Sie die Chance, nicht nur direkten Zugang zu zukünftigen Arbeitnehmern zu schaffen,
+            sondern auch die Möglichkeit durch Bühnenpräsenz einen bleibenden Eindruck zu hinterlassen. Seien Sie
+            außerdem durch laufende Print- und Online-Werbung durchgehend auf dem AKT präsent. Ihr persönlicher Platz
+            auf der Brücke, hart am Wind und mit Kurs auf den Horizont."
+            linkTo="contact"
+            cta="Jetzt anfragen"
+          >
             <table>
               <tbody>
                 <tr>
@@ -208,11 +223,16 @@ export default () => (
                 </tr>
               </tbody>
             </table>
-            <Link to="contact" smooth={true} duration={500}>
-              <Button cta="Jetzt anfragen" />
-            </Link>
           </Package>
-          <Package title="Offizier">
+          <Package
+            title="Offizier"
+            active={false}
+            description="Sichern Sie sich vollen Wind in den Segeln mit persönlichem Zugang zu Studierenden und einen
+            direkten Austausch zwischen diesen und Ihrem Unternehmen. Außerdem können Sie das Interesse unserer
+            Berater*innen durch zahlreiche Print- und Online-Werbung auf sich ziehen."
+            linkTo="contact"
+            cta="Jetzt anfragen"
+          >
             <table>
               <tbody>
                 <tr>
@@ -245,9 +265,6 @@ export default () => (
                 </tr>
               </tbody>
             </table>
-            <Link to="contact" smooth={true} duration={500}>
-              <Button cta="Jetzt anfragen" />
-            </Link>
           </Package>
         </IconContext.Provider>
       </Packages>
