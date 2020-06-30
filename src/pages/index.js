@@ -185,7 +185,7 @@ export default () => (
             title="Kapitän"
             active={true}
             description="Nutzen Sie die Chance, nicht nur direkten Zugang zu zukünftigen Arbeitnehmern zu schaffen,
-            sondern auch die Möglichkeit durch Bühnenpräsenz einen bleibenden Eindruck zu hinterlassen. Seien Sie
+            sondern auch die Möglichkeit, durch Bühnenpräsenz einen bleibenden Eindruck zu hinterlassen. Seien Sie
             außerdem durch laufende Print- und Online-Werbung durchgehend auf dem AKT präsent. Ihr persönlicher Platz
             auf der Brücke, hart am Wind und mit Kurs auf den Horizont."
             linkTo="contact"
@@ -227,7 +227,7 @@ export default () => (
           <Package
             title="Offizier"
             active={false}
-            description="Sichern Sie sich vollen Wind in den Segeln mit persönlichem Zugang zu Studierenden und einen
+            description="Sichern Sie sich vollen Wind in den Segeln mit persönlichem Zugang zu Studierenden und einem
             direkten Austausch zwischen diesen und Ihrem Unternehmen. Außerdem können Sie das Interesse unserer
             Berater*innen durch zahlreiche Print- und Online-Werbung auf sich ziehen."
             linkTo="contact"
