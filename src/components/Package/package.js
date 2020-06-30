@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 const Package = ({ title, children, active }) => {
   return (
-    <PackageWrapper id="packages" className={active ? "active" : "not-active"}>
+    <PackageWrapper className={active ? "active" : "not-active"}>
       <div className="content">
         <h2>{title}</h2>
         {children}
@@ -22,35 +22,29 @@ const PackageWrapper = styled.article`
   @media (min-width: 992px) {
     width: calc(100% / 3);
     margin-bottom: 0;
+    margin: 0 1rem;
   }
 
   .content {
-    background: #051342;
+    background: #0f1e48;
     color: #fff;
     text-align: center;
     padding: 1.5rem;
     border-radius: 4px;
     box-shadow: 0px 0px 22px 7px rgba(0, 0, 0, 0.25);
 
-    h2 {
-      background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
 
-    ul {
+    table {
       padding-left: 0;
-      list-style: none;
       margin: 2.5rem 0;
-
-      li {
+      
+      tr > td {
         line-height: 26px;
         padding-left: 0.5rem;
       }
-
-      .linethrough {
+      tr > .linethrough {
         text-decoration: line-through;
-        opacity: 0.25;
+        opacity: 0.4;
       }
     }
   }
@@ -58,7 +52,7 @@ const PackageWrapper = styled.article`
   &.not-active {
     button {
       background: transparent;
-      border: 1px solid #e609b5;
+      border: 1px solid rgb(0,183,255);
     }
   }
 
@@ -72,7 +66,7 @@ const PackageWrapper = styled.article`
     }
 
     .content {
-      background: #001559;
+      filter: brightness(1.3);
     }
 
     &::before {
@@ -82,7 +76,7 @@ const PackageWrapper = styled.article`
       right: 0px;
       bottom: -5px;
       left: 0px;
-      background: linear-gradient(to right, #fc466b, #3f5efb);
+      background: linear-gradient(to right, rgb(0,183,255), rgb(72,0,255));
       z-index: -1;
       transform: skew(3deg, 3deg);
       border-radius: 4px;

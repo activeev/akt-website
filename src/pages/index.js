@@ -1,4 +1,5 @@
 import React from "react"
+import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Banner from "../components/Banner/banner"
 import TextBlock from "../components/TextBlock/textBlock"
@@ -7,60 +8,128 @@ import Perk from "../components/Perk/perk"
 import Button from "../components/Button/button"
 import Packages from "../components/Packages/packages"
 import Package from "../components/Package/package"
-import Contact from "../components/Contact/contact"
+import ContactNew from "../components/Contact/contactNew"
 import { Link } from "react-scroll"
 
-import perk1Img from "../images/speed.svg"
-import perk2Img from "../images/piggy-bank.svg"
-import perk3Img from "../images/friendly-staff.svg"
+import {FaLightbulb, FaProjectDiagram, FaBroadcastTower, FaCarrot} from "react-icons/fa"
 
 import { IconContext } from "react-icons"
 import { MdDone, MdClear } from "react-icons/md"
 
+
+
 export default () => (
   <>
+    <Helmet>
+      <meta charSet="utf-8" />
+      <title>AKTive Ahoi! | AKT 2021</title>
+      <meta name="Description" content="Mit voller Fahrt voraus geht es vom 15. bis 17.01.2021 nach Bremen.
+      Setzen Sie die Segel und seien Sie Teil eines unvergesslichen Wochenendes!"/>
+      <link rel="icon" href="/favicon-16.png" sizes="16x16"/>
+      <link rel="icon" href="/favicon-32.png" sizes="32x32"/>
+      <link rel="icon" href="/favicon-57.png" sizes="57x57"/>
+      <link rel="icon" href="/favicon-76.png" sizes="76x76"/>
+      <link rel="icon" href="/favicon-96.png" sizes="96x96"/>
+      <link rel="icon" href="/favicon-128.png" sizes="128x128"/>
+      <link rel="icon" href="/favicon-192.png" sizes="192x192"/>
+      <link rel="icon" href="/favicon-228.png" sizes="228x228"/>
+    </Helmet>
     <Layout>
-      <Banner />
+      <Banner id="banner"/>
       <TextBlock
         id="about"
-        title="Developing a new business is never easy, but Startup is here to help"
-        paragraph="With a super-fast Gatsby powered website you have the perfect platform to get your idea off the ground. Its the perfect template to help turn your idea into a reality."
+        title="AKTive Ahoi!"
+        paragraph="Mit voller Fahrt voraus geht es vom 15. - 17.01.2021 nach Bremen zu dem Arbeitskreistreffen des BDSU.
+        Das Treffen bietet Ihnen die Möglichkeit, talentierte studentische Unternehmensberater*innen kennenzulernen und
+        die Bekanntheit Ihres Unternehmens zu steigern.
+        Starten Sie das Jahr gemeinsam mit motivierten, arbeitseifrigen Studierenden aus ganz Deutschland.
+        Setzen Sie die Segel Richtung Bremen und seien Sie Teil
+        eines unvergesslichen Wochenendes!"
       >
         <Link to="perks" smooth={true} duration={500}>
-          <Button cta="Tell Me More!" />
+          <Button cta="Mehr erfahren" />
         </Link>
       </TextBlock>
       <TextBlockImg
         id="perks"
-        title="We have the tools to help you suceed"
-        subtitle="Startup is perfect for helping to to start and grow your business. As
-          you begin to gain new clients and expand you will see the benefits of
-          a super-fast Gatsby website"
+        title="Ihre Vorteile"
+        subtitle="Nutzen Sie die Veranstaltung als Werbeplattform für Ihr Unternehmen und hinterlassen Sie einen
+                  bleibenden Eindruck bei unseren Berater*innen!"
       >
-        <div className="flex-container trio-block">
-          <Perk
-            img={perk1Img}
-            alt="Super fast speed increases"
-            title="Speedy"
-            content="Super-fast response times ensure your business is not affected"
-          />
-          <Perk
-            img={perk2Img}
-            alt="Great savings to be made"
-            title="Affordable"
-            content="A choice of packages to suit every business type and size"
-          />
-          <Perk
-            img={perk3Img}
-            alt="Super fast speed increases"
-            title="Friendly"
-            content="Advisors who are available 24/7, all with exprt knowledge"
-          />
-        </div>
+        <IconContext.Provider
+          value={{
+            //size: "auto",
+            className: "icon",
+            style: {verticalAlign: "middle"}
+          }}
+        >
+          <div className="flex-container trio-block">
+            <Perk
+              img=<FaLightbulb />
+              title="Talentsuche"
+            />
+            <Perk
+              img=<FaBroadcastTower />
+            title="Vergrößern der Reichweite"
+            />
+            <Perk
+              img=<FaProjectDiagram />
+              title="Netzwerken"
+            />
+            <Perk
+              img=<FaCarrot />
+              title="Attraktivitäts- steigerung als Arbeitgeber"
+            />
+          </div>
+        </IconContext.Provider>
       </TextBlockImg>
+      <TextBlock
+        id="program"
+        title="Das Programm"
+      >
+        <table>
+          <th>Freitag, 15.01.2021</th>
+          <tr>
+            <td>14.00</td>
+            <td>Eröffnungsplenum</td>
+          </tr>
+          <tr>
+            <td>20.00</td>
+            <td>Company Night</td>
+          </tr>
+          <th>Samstag, 16.01.2021</th>
+          <tr>
+            <td>10.00</td>
+            <td>Workshops</td>
+          </tr>
+          <tr>
+            <td>15.00</td>
+            <td>JE2JE</td>
+          </tr>
+          <tr>
+            <td>19.00</td>
+            <td>Business Dinner</td>
+          </tr>
+          <tr>
+            <td>21.00</td>
+            <td>Mottoparty</td>
+          </tr>
+          <th>Sonntag, 17.01.2021</th>
+          <tr>
+            <td>10.00</td>
+            <td>Abschlussplenum</td>
+          </tr>
+        </table>
+        <Link to="perks" smooth={true} duration={500}>
+          <Button cta="Mehr erfahren" />
+        </Link>
+      </TextBlock>
+
       <Packages
-        title="Our Packages"
-        para="Choose the perfect solution for you. With benefits to suit all budgets Startup can offer amazing value and expert advice"
+        id="packages"
+        title="Werden Sie Teil der Crew"
+        para="Wir bieten drei verschiedene Crew-Ränge an, die sich in Preis und Umfang unterscheiden.
+              Wählen Sie Ihr passendes Paket und werden Sie Teil der Crew des AKT 2021 in Bremen."
       >
         <IconContext.Provider
           value={{
@@ -69,80 +138,127 @@ export default () => (
             style: { verticalAlign: "middle", marginRight: "5px" },
           }}
         >
-          <Package title="Standard">
-            <ul>
-              <li>
-                <MdDone />1 User
-              </li>
-              <li>
-                <MdDone />
-                1GB Storage
-              </li>
-              <li className="linethrough">
-                <MdClear color="red" />
-                Dedicated Advisor
-              </li>
-              <li className="linethrough">
-                <MdClear color="red" />
-                24/7 Support
-              </li>
-            </ul>
+          <Package title="Steuermann">
+            <table>
+              <tbody>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Logo auf Teilnehmerbadges</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Printwerbung und Giveaways in Begrüßungstüten</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Präsenz in der AKT-App</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Stellenanzeige online und offline</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Business Dinner / B2JE</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Instagram- und Facebook-Promotion</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Unternehmenspräsentation</td>
+                </tr>
+              </tbody>
+            </table>
             <Link to="contact" smooth={true} duration={500}>
-              <Button cta="I want this!" />
+              <Button cta="Jetzt anfragen" />
             </Link>
           </Package>
-          <Package title="Hyper" active={true}>
-            <ul>
-              <li>
-                <MdDone />
-                24/7 Support
-              </li>
-              <li>
-                <MdDone />
-                Dedicated Advisor
-              </li>
-              <li>
-                <MdDone />
-                Unlimited Storage
-              </li>
-              <li>
-                <MdDone />
-                Unlimited Users
-              </li>
-            </ul>
+          <Package title="Kapitän" active={true}>
+            <table>
+              <tbody>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Logo auf Teilnehmerbadges</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Printwerbung und Giveaways in Begrüßungstüten</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Präsenz in der AKT-App</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Stellenanzeige online und offline</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Business Dinner / B2JE</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Instagram- und Facebook-Promotion</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Unternehmenspräsentation</td>
+                </tr>
+              </tbody>
+            </table>
             <Link to="contact" smooth={true} duration={500}>
-              <Button cta="I want this!" />
+              <Button cta="Jetzt anfragen" />
             </Link>
           </Package>
-          <Package title="Super">
-            <ul>
-              <li>
-                <MdDone />
-                10 Users
-              </li>
-              <li>
-                <MdDone />
-                500GB Storage
-              </li>
-              <li>
-                <MdDone />
-                Advice Support
-              </li>
-              <li className="linethrough">
-                <MdClear color="red" />
-                Dedicated Advisor
-              </li>
-            </ul>
+          <Package title="Offizier">
+            <table>
+              <tbody>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Logo auf Teilnehmerbadges</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Printwerbung und Giveaways in Begrüßungstüten</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Präsenz in der AKT-App</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Stellenanzeige online und offline</td>
+                </tr>
+                <tr>
+                  <td><MdDone/></td>
+                  <td>Business Dinner / B2JE</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Instagram- und Facebook-Promotion</td>
+                </tr>
+                <tr>
+                  <td><MdClear color="red"/></td>
+                  <td className="linethrough">Unternehmenspräsentation</td>
+                </tr>
+              </tbody>
+            </table>
             <Link to="contact" smooth={true} duration={500}>
-              <Button cta="I want this!" />
+              <Button cta="Jetzt anfragen" />
             </Link>
           </Package>
         </IconContext.Provider>
       </Packages>
-      <Contact
+      <ContactNew
         id="contact"
-        title="Contact Startup today and see how we can help your business grow"
-        subtitle="Every second counts when you're looking to get your new business started. Drop Startup a message and one of our representatives will be in contact"
+        title="Interesse?"
+        subtitle="Heuern Sie an in unserem Kontaktbüro!"
+        name="Pia Franke"
+        position="Admiral (Projektleitung)"
+        phone="+49 176 9839 2363"
+        mail="akt@active-bremen.de"
       />
     </Layout>
   </>

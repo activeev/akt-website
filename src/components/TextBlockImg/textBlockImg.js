@@ -6,9 +6,9 @@ import styled from "styled-components"
 const TextBlockImg = ({ title, children, subtitle, id }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "purple-bg.jpg" }) {
+      file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 90) {
+          fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -17,8 +17,9 @@ const TextBlockImg = ({ title, children, subtitle, id }) => {
   `)
   return (
     <BackgroundImage
-      id="perks"
+      id={id}
       Tag="section"
+      className="parallax-image"
       fluid={data.file.childImageSharp.fluid}
     >
       <TextBlockImgWrapper>
@@ -49,9 +50,9 @@ const TextBlockImgWrapper = styled.section`
   }
 
   h2 {
-    background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
   }
 
   p {

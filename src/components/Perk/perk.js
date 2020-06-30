@@ -27,7 +27,8 @@ const Perk = ({ img, alt, title, content }) => {
       transition={{ ease: "easeOut", duration: 1.25, delay: 0.35 }}
     >
       <PerkWrapper className="perk">
-        <img src={img} alt={alt} />
+        {/*<img src={img} alt={alt} />*/}
+        {img}
         <h3>{title}</h3>
         <p>{content}</p>
       </PerkWrapper>
@@ -40,9 +41,12 @@ const PerkWrapper = styled.article`
   max-width: 260px;
   margin: 0 auto;
 
-  img {
+  .icon {
     box-sizing: border-box;
-    width: 100%;
+    /* height: 6em;
+    width: auto; */
+    height: 9vmin;
+    width: auto;
 
     @media (min-width: 992px) {
       padding: 0 1.75rem;

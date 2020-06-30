@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import "typeface-gothic-a1"
 import "./reset.css"
 import Navbar from "../components/Navbar/navbar"
 import Footer from "../components/Footer/footer"
@@ -20,10 +19,11 @@ const LayoutWrapper = styled.div`
     box-sizing: border-box;
   }
 
-  font-family: "Gothic A1", sans-serif;
-  color: #fff;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  color: rgb(15,30,72);
   /* background-color: #060c21; */
-  background: linear-gradient(45deg, #060c21, #0d0139);
+  #background: linear-gradient(45deg, #060c21, #0d0139);
+  background: #fff;
 
   h1,
   h2,
@@ -41,6 +41,12 @@ const LayoutWrapper = styled.div`
     font-weight: 400;
     letter-spacing: -1px;
     margin: 1rem 0;
+    color: transparent;
+    background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
 
     @media (min-width: 768px) {
       font-size: 1.6rem;
@@ -53,10 +59,18 @@ const LayoutWrapper = styled.div`
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    
+    @media (min-width: 768px) {
+      font-size: 1.3rem;
+      line-height: 1.2;
+    }
+    @media (min-width: 1080px) {
+      font-size: 1.5rem;
+    }
   }
 
-  p {
+  p, tr, th {
     font-size: 1rem;
     line-height: 1.45;
     margin: 1rem 0;
@@ -87,11 +101,30 @@ const LayoutWrapper = styled.div`
     &.trio-block {
       flex-direction: column;
       justify-content: center;
+      
+      & > * {
+        flex-grow: 1;
+      }
 
       @media (min-width: 992px) {
         flex-direction: row;
       }
     }
+  }
+  
+  .parallax-image,
+  .parallax-image::before {
+    background-attachment: scroll;
+    background-position: left center;
+    background-size: cover;
+    
+    @media (min-width: 1200px) {
+      background-attachment: fixed;
+      background-position: center;
+    }
+  }
+  .full-screen-image {
+    height: 100vh;
   }
 
   .section-padding {

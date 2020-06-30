@@ -1,20 +1,42 @@
 import React from "react"
 import styled from "styled-components"
 
-const Packages = ({ title, para, children }) => {
+import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
+
+const Packages = ({ title, para, children, id }) => {
+  const data = useStaticQuery(graphql`
+      query {
+          file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
+              childImageSharp {
+                  fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
+                      ...GatsbyImageSharpFluid_withWebp
+                  }
+              }
+          }
+      }
+  `)
+
   return (
-    <PackagesWrapper>
-      <div className="text-area">
-        <h2>{title}</h2>
-        <p>{para}</p>
-      </div>
-      <div className="flex-container">{children}</div>
-    </PackagesWrapper>
+    <BackgroundImage
+      id={id}
+      Tag="section"
+      className="parallax-image"
+      fluid={data.file.childImageSharp.fluid}
+    >
+      <PackagesWrapper>
+        <div className="text-area">
+          <h2>{title}</h2>
+          <p>{para}</p>
+        </div>
+        <div className="flex-container">{children}</div>
+      </PackagesWrapper>
+    </BackgroundImage>
   )
 }
 
 const PackagesWrapper = styled.section`
-  padding: 100px 30px;
+  padding: 100px 30px 150px;
   text-align: center;
 
   .text-area {
@@ -24,12 +46,6 @@ const PackagesWrapper = styled.section`
     @media (min-width: 1200px) {
       max-width: 650px;
     }
-  }
-
-  h2 {
-    background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
 
   .flex-container {

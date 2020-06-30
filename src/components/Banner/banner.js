@@ -6,12 +6,21 @@ import Button from "../Button/button"
 import { Link } from "react-scroll"
 import { motion } from "framer-motion"
 
-const Banner = () => {
+const Banner = ({id}) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "flames.jpg" }) {
+      file(relativePath: { eq: "sailboats-2-cropped.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 90) {
+          fluid(
+              maxWidth: 2000,
+              quality: 90,
+              cropFocus: SOUTH,
+#              duotone: {
+#                  highlight: "#4800ff",
+#                  shadow: "#00b7ff",
+#                  opacity: 20
+#              }
+          ) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -25,10 +34,10 @@ const Banner = () => {
   }
 
   return (
-    <BannerWrapper>
+    <BannerWrapper id={id}>
       <BackgroundImage
         Tag="section"
-        className="hero-image"
+        className="parallax-image full-size-image"
         fluid={data.file.childImageSharp.fluid}
       >
         <div className="hero-content">
@@ -38,7 +47,7 @@ const Banner = () => {
             variants={variants}
             transition={{ ease: "easeOut", duration: 0.8, delay: 1 }}
           >
-            It's time to make your business <span>stand out</span>
+            Arbeitskreistreffen <br/> <span>des BDSU</span>
           </motion.h1>
           <motion.p
             initial="hidden"
@@ -46,11 +55,10 @@ const Banner = () => {
             variants={variants}
             transition={{ ease: "easeOut", duration: 0.8, delay: 1.5 }}
           >
-            Startup is here to help you achieve your business and personal
-            goals, all through a stylish theme
+            - Januar 2021 -
           </motion.p>
           <Link to="about" smooth={true} duration={500}>
-            <Button cta="Learn More" anchor={true} href="linking" />
+            <Button cta="Weitere Infos" anchor={true} href="about" />
           </Link>
         </div>
       </BackgroundImage>
@@ -61,68 +69,76 @@ const Banner = () => {
 const BannerWrapper = styled.section`
   .gatsby-image-wrapper {
     height: 100vh;
-    color: #fff;
+    color: rgb(15,30,72);
+  }
+
+  .hero-content {
+    height: 100vh;
+    text-align: center;
+    #height: 100%;
+    width: 100%;
+    max-width: 400px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (min-width: 768px) {
+      max-width: 650px;
     }
 
-    .hero-content {
-      text-align: center;
-      height: 100%;
-      width: 100%;
-      max-width: 400px;
-      padding: 0 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      margin-left: auto;
-      margin-right: auto;
+    h1 {
+      font-size: 1.75rem;
+      line-height: 1.2;
+      background: rgb(15,30,72);
+      background-clip: text;
+      -webkit-background-clip: text;
+      
+
+      span {
+        /* background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4); */
+        //background: linear-gradient(45deg, rgb(140,164,232), rgb(223,157,26));
+        //background: linear-gradient(45deg, rgb(223,157,26), rgb(15,30,72));
+        //background: linear-gradient(45deg, #8cd1e8, #a38ce8);
+        background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 2rem;
+      line-height: 1.2;
+      font-size: 1.15rem;
 
       @media (min-width: 768px) {
-        max-width: 650px;
-      }
-
-      h1 {
-        font-size: 1.75rem;
-        line-height: 1.2;
-
-        span {
-          background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-      }
-
-      p {
-        margin-top: 0;
-        margin-bottom: 2rem;
-        line-height: 1.2;
-        font-size: 1.15rem;
-
-        @media (min-width: 768px) {
-          font-size: 1.35rem;
-        }
-
-        @media (min-width: 1200px) {
-          font-size: 1.5rem;
-        }
-      }
-
-      button,
-      .anchor {
-        margin: 0 auto;
-      }
-
-      @media (min-width: 768px) {
-        max-width: 800px;
-
-        h1 {
-          font-size: 3rem;
-        }
+        font-size: 1.35rem;
       }
 
       @media (min-width: 1200px) {
-        h1 {
-          font-size: 4rem;
-        }
+        font-size: 1.5rem;
+      }
+    }
+
+    button,
+    .anchor {
+      margin: 0 auto;
+    }
+
+    @media (min-width: 768px) {
+      max-width: 800px;
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 4rem;
       }
     }
   }

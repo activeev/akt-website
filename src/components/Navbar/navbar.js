@@ -1,11 +1,23 @@
 import React, { useState } from "react"
 import links from "../../constants/links"
 import styled from "styled-components"
-import Logo from "../../images/startup-logo.svg"
-import { Link, animateScroll as scroll } from "react-scroll"
+import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "react-scroll"
+import Img from "gatsby-image"
 
 const Navbar = () => {
   const [isOpen, setNav] = useState(false)
+
+  const logo = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo-square-transparent.png"}) {
+        childImageSharp {
+          fluid(maxWidth: 500, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }`)
 
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -13,7 +25,11 @@ const Navbar = () => {
   return (
     <NavWrapper>
       <div className="masthead flex-container">
-        <img src={Logo} alt="Startup Logo" />
+        <div className="logo">
+          <Img
+            fluid={logo.file.childImageSharp.fluid}
+          />
+        </div>
         <button
           className={
             isOpen
@@ -36,11 +52,12 @@ const Navbar = () => {
             <li key={index}>
               <Link
                 activeClass="active"
-                to={item.text}
+                to={item.path}
                 spy={true}
                 smooth={true}
                 duration={500}
-                offset={-50}
+                //offset={-50}
+                onClick={toggleNav}
               >
                 {item.text}
               </Link>
@@ -68,15 +85,18 @@ const NavWrapper = styled.nav`
     width: 100%;
     justify-content: space-between;
 
-    img {
+    img, .logo {
+      //width: 90px;
       width: 90px;
 
       @media (min-width: 768px) {
-        width: 100px;
+        //width: 100px;
+        width: 140px;
       }
 
       @media (min-width: 1200px) {
-        width: 120px;
+        //width: 120px;
+        width: 170px;
       }
     }
   }
@@ -88,6 +108,10 @@ const NavWrapper = styled.nav`
     position: fixed;
     text-align: center;
     background: linear-gradient(45deg, #060c21, #0d0139);
+    background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+    background: rgb(140,164,232);
+    background: #fff;
+    opacity: 0.8;
     margin: 0;
     height: 100%;
     top: 0;
@@ -108,17 +132,20 @@ const NavWrapper = styled.nav`
       a {
         text-decoration: none;
         text-transform: capitalize;
-        color: #fff;
+        color: rgb(15,30,72);
         transition: 0.3s;
 
         &.active {
-          color: #e609b5;
+          // color: #e609b5;
+          filter: brightness(3);
         }
       }
       &:hover {
         cursor: pointer;
         a {
-          color: #e609b5;
+          // color: #e609b5;
+          // color: #fff;
+          filter: brightness(3);
         }
       }
     }
@@ -129,10 +156,12 @@ const NavWrapper = styled.nav`
   }
 
   .toggle-btn {
-    width: 40px;
-    height: 40px;
-    padding: 5px;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
     background-color: transparent;
+    background-color: #fff;
+    border-radius: 50%;
     border: none;
 
     span {
@@ -140,6 +169,7 @@ const NavWrapper = styled.nav`
       width: 30px;
       height: 2px;
       background-color: #fff;
+      background-color: rgb(15,30,72);
       transition: 0.2s ease-in;
 
       &:nth-child(1) {

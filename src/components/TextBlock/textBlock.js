@@ -38,8 +38,8 @@ const TextBlock = ({ title, paragraph, children, id }) => {
 }
 
 const TextBlockWrapper = styled.section`
-  background: linear-gradient(45deg, #060c21, #0d0139);
-  color: #fff;
+  background: #fff;
+  color: #0f1e48;
   text-align: left;
   padding: 60px 20px;
 
@@ -48,17 +48,37 @@ const TextBlockWrapper = styled.section`
     text-align: center;
   }
 
-  h2 {
-    color: #ee00b3;
-    background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
   p {
     margin-bottom: 40px;
-    text-shadow: 0px 0px 5px rgba(8, 0, 8, 1);
+    #text-shadow: 0px 0px 5px rgba(8, 0, 8, 1);
     opacity: 0.85;
+    //text-align: justify;
+  }
+  
+  table {
+    margin-bottom: 40px;
+    
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto;
+  
+    @media (min-width: 768px) {
+      grid-template-columns: auto auto;
+      grid-column-gap: 3em;
+      margin: 0 auto 40px;
+      
+      tr {
+        grid-column-start: 2;
+      }
+      
+      th {
+        text-align: right;
+      }
+    }
+    td {
+      padding: 0 0.5em;
+    }
+    
   }
 `
 

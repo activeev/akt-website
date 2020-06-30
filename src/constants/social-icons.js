@@ -1,13 +1,21 @@
 import React from "react"
-import { FaLinkedinIn, FaGithub } from "react-icons/fa"
+import { FaLinkedinIn, FaInstagram, FaFacebookSquare, FaXing } from "react-icons/fa"
 
 export default [
   {
-    icon: <FaLinkedinIn />,
-    url: "https://www.linkedin.com/in/morgan-baker-developer-inverness/",
+    icon: <FaFacebookSquare />,
+    url: "http://facebook.com/active.bremen/",
   },
   {
-    icon: <FaGithub />,
-    url: "https://github.com/bagseye",
+    icon: <FaInstagram />,
+    url: "https://www.instagram.com/activebremen",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    url: "https://linkedin.com/company/active-e-v-",
+  },
+  {
+    icon: <FaXing />,
+    url: "https://www.xing.com/companies/activee.v.-studentischeunternehmensberatung",
   },
 ]

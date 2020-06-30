@@ -1,14 +1,18 @@
 export default [
   {
-    path: "/",
-    text: "about",
+    path: "banner",
+    text: "home"
   },
   {
-    path: "/",
-    text: "packages",
+    path: "about",
+    text: "Über",
   },
   {
-    path: "/",
-    text: "contact",
+    path: "packages",
+    text: "Pakete",
+  },
+  {
+    path: "contact",
+    text: "Kontakt",
   },
 ]
