@@ -22,6 +22,9 @@ const Navbar = () => {
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
   }
+  const disableNav = () => {
+    setNav(false)
+  }
   return (
     <NavWrapper>
       <div className="masthead flex-container">
@@ -46,7 +49,7 @@ const Navbar = () => {
       </div>
       <ul
         className={isOpen ? `${"nav-links"} ${"show-nav"}` : `${"nav-links"}`}
-        onClick={toggleNav}
+        onClick={disableNav}
       >
         {links.map((item, index) => {
           return (
@@ -58,7 +61,7 @@ const Navbar = () => {
                 smooth={true}
                 duration={500}
                 offset={-50}
-                onClick={toggleNav}
+                onClick={disableNav}
               >
                 {item.text}
               </Link>
