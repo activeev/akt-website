@@ -46,6 +46,7 @@ const Navbar = () => {
       </div>
       <ul
         className={isOpen ? `${"nav-links"} ${"show-nav"}` : `${"nav-links"}`}
+        onClick={toggleNav}
       >
         {links.map((item, index) => {
           return (
