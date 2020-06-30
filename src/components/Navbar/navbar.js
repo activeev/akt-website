@@ -115,7 +115,7 @@ const NavWrapper = styled.nav`
     background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
     background: rgb(140,164,232);
     background: #fff;
-    opacity: 0.8;
+    opacity: 0.9;
     margin: 0;
     height: 100%;
     top: 0;
