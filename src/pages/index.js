@@ -19,9 +19,7 @@ import {
 } from "react-icons/fa"
 
 import { IconContext } from "react-icons"
-import { MdDone, MdClear } from "react-icons/md"
-
-
+import { MdCheck, MdClose, MdAdd } from "react-icons/md"
 
 export default () => (
   <>
@@ -147,34 +145,64 @@ export default () => (
             <table>
               <tbody>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Logo auf Teilnehmerbadges</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Printwerbung und Giveaways in Begrüßungstüten</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Präsenz in der AKT-App</td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
-                  <td className="linethrough">Stellenanzeige online und offline</td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
+                  <td className="linethrough">
+                    Stellenanzeige online und offline
+                  </td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
-                  <td className="linethrough">Business Dinner / B2JE</td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
+                  <td className="linethrough">Business Dinner</td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
-                  <td className="linethrough">Instagram- und Facebook-Promotion</td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
+                  <td className="linethrough">
+                    Instagram- und Facebook-Promotion
+                  </td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
                   <td className="linethrough">Unternehmenspräsentation</td>
                 </tr>
               </tbody>
+              <tfoot>
+                <tr>
+                  <td/>
+                  <td>- Zubuchbar -</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdAdd />
+                  </td>
+                  <td>Business Night</td>
+                </tr>
+              </tfoot>
             </table>
           </Package>
           <Package
@@ -190,34 +218,60 @@ export default () => (
             <table>
               <tbody>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Logo auf Teilnehmerbadges</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Printwerbung und Giveaways in Begrüßungstüten</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Präsenz in der AKT-App</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Stellenanzeige online und offline</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
-                  <td>Business Dinner / B2JE</td>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Business Dinner</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Instagram- und Facebook-Promotion</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Unternehmenspräsentation</td>
                 </tr>
               </tbody>
+              <tfoot>
+              <tr>
+                <td/>
+                <td>- Zubuchbar -</td>
+              </tr>
+              <tr>
+                <td>
+                  <MdAdd />
+                </td>
+                <td>Business Night</td>
+              </tr>
+              </tfoot>
             </table>
           </Package>
           <Package
@@ -232,34 +286,62 @@ export default () => (
             <table>
               <tbody>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Logo auf Teilnehmerbadges</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Printwerbung und Giveaways in Begrüßungstüten</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Präsenz in der AKT-App</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
+                  <td>
+                    <MdCheck />
+                  </td>
                   <td>Stellenanzeige online und offline</td>
                 </tr>
                 <tr>
-                  <td><MdDone/></td>
-                  <td>Business Dinner / B2JE</td>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Business Dinner</td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
-                  <td className="linethrough">Instagram- und Facebook-Promotion</td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
+                  <td className="linethrough">
+                    Instagram- und Facebook-Promotion
+                  </td>
                 </tr>
                 <tr>
-                  <td><MdClear color="red"/></td>
+                  <td>
+                    <MdClose color="red" />
+                  </td>
                   <td className="linethrough">Unternehmenspräsentation</td>
                 </tr>
               </tbody>
+              <tfoot>
+              <tr>
+                <td/>
+                <td>- Zubuchbar -</td>
+              </tr>
+              <tr>
+                <td>
+                  <MdAdd/>
+                </td>
+                <td>Business Night</td>
+              </tr>
+              </tfoot>
             </table>
           </Package>
         </IconContext.Provider>
@@ -271,7 +353,7 @@ export default () => (
         name="Pia Franke"
         position="Admiral (Projektleitung)"
         phone="+49 176 9839 2363"
-        mail="akt@active-bremen.de"
+        mail="pia.franke@active-bremen.de"
       />
     </Layout>
   </>
