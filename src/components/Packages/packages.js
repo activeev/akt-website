@@ -6,15 +6,15 @@ import BackgroundImage from "gatsby-background-image"
 
 const Packages = ({ title, para, children, id }) => {
   const data = useStaticQuery(graphql`
-      query {
-          file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
-              childImageSharp {
-                  fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
-                      ...GatsbyImageSharpFluid_withWebp
-                  }
-              }
+    query {
+      file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
+            ...GatsbyImageSharpFluid_withWebp
           }
+        }
       }
+    }
   `)
 
   return (

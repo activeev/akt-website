@@ -6,21 +6,21 @@ import Button from "../Button/button"
 import { Link } from "react-scroll"
 import { motion } from "framer-motion"
 
-const Banner = ({id}) => {
+const Banner = ({ id }) => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "sailboats-2-cropped.jpg" }) {
         childImageSharp {
           fluid(
-              maxWidth: 2000,
-              quality: 90,
-              cropFocus: SOUTH,
-#              duotone: {
-#                  highlight: "#4800ff",
-#                  shadow: "#00b7ff",
-#                  opacity: 20
-#              }
-          ) {
+            maxWidth: 2000
+            quality: 90
+            cropFocus: SOUTH
+          ) #              duotone: {
+          #                  highlight: "#4800ff",
+          #                  shadow: "#00b7ff",
+          #                  opacity: 20
+          #              }
+          {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -47,7 +47,7 @@ const Banner = ({id}) => {
             variants={variants}
             transition={{ ease: "easeOut", duration: 0.8, delay: 1 }}
           >
-            Arbeitskreistreffen <br/> <span>des BDSU</span>
+            Arbeitskreistreffen <br /> <span>des BDSU</span>
           </motion.h1>
           <motion.p
             initial="hidden"
@@ -69,7 +69,7 @@ const Banner = ({id}) => {
 const BannerWrapper = styled.section`
   .gatsby-image-wrapper {
     height: 100vh;
-    color: rgb(15,30,72);
+    color: rgb(15, 30, 72);
   }
 
   .hero-content {
@@ -92,17 +92,16 @@ const BannerWrapper = styled.section`
     h1 {
       font-size: 1.75rem;
       line-height: 1.2;
-      background: rgb(15,30,72);
+      background: rgb(15, 30, 72);
       background-clip: text;
       -webkit-background-clip: text;
-      
 
       span {
         /* background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4); */
         //background: linear-gradient(45deg, rgb(140,164,232), rgb(223,157,26));
         //background: linear-gradient(45deg, rgb(223,157,26), rgb(15,30,72));
         //background: linear-gradient(45deg, #8cd1e8, #a38ce8);
-        background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+        background: linear-gradient(45deg, rgb(72, 0, 255), rgb(0, 183, 255));
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }

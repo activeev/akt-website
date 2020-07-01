@@ -1,5 +1,10 @@
 import React from "react"
-import { FaLinkedinIn, FaInstagram, FaFacebookSquare, FaXing } from "react-icons/fa"
+import {
+  FaLinkedinIn,
+  FaInstagram,
+  FaFacebookSquare,
+  FaXing,
+} from "react-icons/fa"
 
 export default [
   {
@@ -16,6 +21,7 @@ export default [
   },
   {
     icon: <FaXing />,
-    url: "https://www.xing.com/companies/activee.v.-studentischeunternehmensberatung",
+    url:
+      "https://www.xing.com/companies/activee.v.-studentischeunternehmensberatung",
   },
 ]

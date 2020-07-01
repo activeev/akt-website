@@ -1,7 +1,7 @@
 export default [
   {
     path: "banner",
-    text: "home"
+    text: "home",
   },
   {
     path: "about",

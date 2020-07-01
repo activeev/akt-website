@@ -8,31 +8,31 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const Contact = ({ title, subtitle, id, name, position, mail, phone }) => {
   const data = useStaticQuery(graphql`
-      query {
-          img1: file(relativePath: { eq: "boat-person-wave.jpg" }) {
-              childImageSharp {
-                  fluid(
-                      maxWidth: 2000,
-                      quality: 90,
-                      cropFocus: NORTHEAST,
-#                      duotone: {
-#                          highlight: "#00b7ff",
-#                          shadow: "#4800ff",
-#                          opacity: 30
-#                      }
-                  ) {
-                      ...GatsbyImageSharpFluid_withWebp
-                  }
-              }
-          },
-          img2: file(relativePath: { eq: "contact.jpg" }) {
-              childImageSharp {
-                  fluid(maxWidth: 900, quality: 90) {
-                      ...GatsbyImageSharpFluid_withWebp
-                  }
-              }
+    query {
+      img1: file(relativePath: { eq: "boat-person-wave.jpg" }) {
+        childImageSharp {
+          fluid(
+            maxWidth: 2000
+            quality: 90
+            cropFocus: NORTHEAST
+          ) #                      duotone: {
+          #                          highlight: "#00b7ff",
+          #                          shadow: "#4800ff",
+          #                          opacity: 30
+          #                      }
+          {
+            ...GatsbyImageSharpFluid_withWebp
           }
+        }
       }
+      img2: file(relativePath: { eq: "contact.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 900, quality: 90) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
   `)
 
   return (
@@ -63,13 +63,13 @@ const Contact = ({ title, subtitle, id, name, position, mail, phone }) => {
               </div>
 
               <div className="input-area">
-            <textarea
-              type="text"
-              name="message"
-              rows="5"
-              required
-              autoComplete="off"
-            />
+                <textarea
+                  type="text"
+                  name="message"
+                  rows="5"
+                  required
+                  autoComplete="off"
+                />
                 <label className="label-name">
                   <span className="content-name">Nachricht</span>
                 </label>
@@ -87,8 +87,16 @@ const Contact = ({ title, subtitle, id, name, position, mail, phone }) => {
               <div className="card-container">
                 <h3>{name}</h3>
                 <p>{position}</p>
-                <p><a href={`tel:${phone}`}>{phone}</a></p>
-                <p><a href={`mailto:${mail}?subject=Anfrage zum AKT 2021&cc=akt@active-bremen.de&body=Sehr%20geehrte%20Frau%20Franke,%0A%0A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A%0AErika%20Musterfrau`}>{mail}</a></p>
+                <p>
+                  <a href={`tel:${phone}`}>{phone}</a>
+                </p>
+                <p>
+                  <a
+                    href={`mailto:${mail}?subject=Anfrage zum AKT 2021&cc=akt@active-bremen.de&body=Sehr%20geehrte%20Frau%20Franke,%0A%0A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A%0AErika%20Musterfrau`}
+                  >
+                    {mail}
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -102,7 +110,6 @@ const ContactWrapper = styled.section`
   padding: 100px 30px;
 
   .content-container {
-    
     max-width: 500px;
     margin: 0 auto;
 
@@ -131,35 +138,34 @@ const ContactWrapper = styled.section`
         text-align: center;
       }
     }
-    
+
     .flex-container {
       &.contact-block {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-      
+
         & > * {
           //flex-grow: 1;
         }
-       
+
         @media (min-width: 992px) {
           flex-direction: row;
         }
-        
+
         .contact-card {
           //width: 100%;
           flex-grow: 1;
           background-color: #fff;
           margin: 0 auto;
-          
+
           .card-image {
-            
           }
-          
+
           .card-container {
             text-align: center;
             padding: 0 20px;
-          
+
             & p {
               line-height: 1;
               margin-bottom: 1rem;
@@ -168,15 +174,13 @@ const ContactWrapper = styled.section`
         }
       }
     }
-    
-    
-    
+
     form {
       position: relative;
       overflow: hidden;
       //margin-right: 40px;
       flex-grow: 3;
-      
+
       @media (min-width: 992px) {
         margin-right: 40px;
       }
@@ -220,7 +224,7 @@ const ContactWrapper = styled.section`
             }
           }
         }
-        
+
         &:invalid {
           box-shadow: none; /* remove red border added by browsers  */
           color: red;
@@ -242,7 +246,7 @@ const ContactWrapper = styled.section`
           bottom: -3px;
           height: 3px;
           //background: linear-gradient(90deg, #f441a5, #03a9f4);
-          background: linear-gradient(90deg, rgb(72,0,255), rgb(0,183,255));
+          background: linear-gradient(90deg, rgb(72, 0, 255), rgb(0, 183, 255));
           width: 100%;
           transform: translateX(-100%);
           transition: transform 0.3s ease;

@@ -16,8 +16,8 @@ const Footer = () => {
           rel="noopener noreferrer"
         >
           Active e. V.
-        </a>
-        {" "}& developed by{" "}
+        </a>{" "}
+        & developed by{" "}
         <a
           href="http://www.morganbaker.dev"
           target="_blank"
@@ -50,7 +50,7 @@ const FooterWrapper = styled.footer`
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
   }
-  
+
   .credit {
     font-size: 0.85rem;
     margin-bottom: 0.5rem;
@@ -62,7 +62,7 @@ const FooterWrapper = styled.footer`
       // background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
       // -webkit-background-clip: text;
       // -webkit-text-fill-color: transparent;
-      background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+      background: linear-gradient(45deg, rgb(72, 0, 255), rgb(0, 183, 255));
       background-clip: text;
       -webkit-background-clip: text;
       text-fill-color: transparent;
@@ -71,7 +71,7 @@ const FooterWrapper = styled.footer`
   }
 
   a {
-    color: rgb(15,30,72);
+    color: rgb(15, 30, 72);
     font-size: 1.75rem;
     padding: 0 0.5rem;
 

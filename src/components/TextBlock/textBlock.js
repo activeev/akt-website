@@ -54,23 +54,23 @@ const TextBlockWrapper = styled.section`
     opacity: 0.85;
     //text-align: justify;
   }
-  
+
   table {
     margin-bottom: 40px;
-    
+
     display: grid;
     align-items: center;
     grid-template-columns: auto;
-  
+
     @media (min-width: 768px) {
       grid-template-columns: auto auto;
       grid-column-gap: 3em;
       margin: 0 auto 40px;
-      
+
       tr {
         grid-column-start: 2;
       }
-      
+
       th {
         text-align: right;
       }
@@ -78,7 +78,6 @@ const TextBlockWrapper = styled.section`
     td {
       padding: 0 0.5em;
     }
-    
   }
 `
 

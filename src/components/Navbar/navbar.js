@@ -10,14 +10,15 @@ const Navbar = () => {
 
   const logo = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "logo-square-transparent.png"}) {
+      file(relativePath: { eq: "logo-square-transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-    }`)
+    }
+  `)
 
   const toggleNav = () => {
     setNav(isOpen => !isOpen)
@@ -29,9 +30,7 @@ const Navbar = () => {
     <NavWrapper>
       <div className="masthead flex-container">
         <div className="logo">
-          <Img
-            fluid={logo.file.childImageSharp.fluid}
-          />
+          <Img fluid={logo.file.childImageSharp.fluid} />
         </div>
         <button
           className={
@@ -89,7 +88,8 @@ const NavWrapper = styled.nav`
     width: 100%;
     justify-content: space-between;
 
-    img, .logo {
+    img,
+    .logo {
       //width: 90px;
       width: 90px;
 
@@ -111,11 +111,16 @@ const NavWrapper = styled.nav`
     justify-content: center;
     position: fixed;
     text-align: center;
-    background: linear-gradient(45deg, #060c21, #0d0139);
-    background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
-    background: rgb(140,164,232);
-    background: #fff;
-    opacity: 0.9;
+    //background: linear-gradient(45deg, #060c21, #0d0139);
+    //background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+    //background: rgb(140,164,232);
+    //background: #fff;
+    //opacity: 0.9;
+    background: radial-gradient(
+      closest-side at 50% 50%,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0.5)
+    );
     margin: 0;
     height: 100%;
     top: 0;
@@ -136,7 +141,7 @@ const NavWrapper = styled.nav`
       a {
         text-decoration: none;
         text-transform: capitalize;
-        color: rgb(15,30,72);
+        color: rgb(15, 30, 72);
         transition: 0.3s;
 
         &.active {
@@ -173,7 +178,7 @@ const NavWrapper = styled.nav`
       width: 30px;
       height: 2px;
       background-color: #fff;
-      background-color: rgb(15,30,72);
+      background-color: rgb(15, 30, 72);
       transition: 0.2s ease-in;
 
       &:nth-child(1) {

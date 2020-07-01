@@ -20,7 +20,7 @@ const LayoutWrapper = styled.div`
   }
 
   font-family: Tahoma, Verdana, Segoe, sans-serif;
-  color: rgb(15,30,72);
+  color: rgb(15, 30, 72);
   /* background-color: #060c21; */
   #background: linear-gradient(45deg, #060c21, #0d0139);
   background: #fff;
@@ -42,7 +42,7 @@ const LayoutWrapper = styled.div`
     letter-spacing: -1px;
     margin: 1rem 0;
     color: transparent;
-    background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
+    background: linear-gradient(45deg, rgb(72, 0, 255), rgb(0, 183, 255));
     background-clip: text;
     -webkit-background-clip: text;
     text-fill-color: transparent;
@@ -60,7 +60,7 @@ const LayoutWrapper = styled.div`
 
   h3 {
     font-size: 1.2rem;
-    
+
     @media (min-width: 768px) {
       font-size: 1.3rem;
       line-height: 1.2;
@@ -70,7 +70,9 @@ const LayoutWrapper = styled.div`
     }
   }
 
-  p, tr, th {
+  p,
+  tr,
+  th {
     font-size: 1rem;
     line-height: 1.45;
     margin: 1rem 0;
@@ -101,7 +103,7 @@ const LayoutWrapper = styled.div`
     &.trio-block {
       flex-direction: column;
       justify-content: center;
-      
+
       & > * {
         flex-grow: 1;
       }
@@ -111,13 +113,13 @@ const LayoutWrapper = styled.div`
       }
     }
   }
-  
+
   .parallax-image,
   .parallax-image::before {
     background-attachment: scroll;
     background-position: left center;
     background-size: cover;
-    
+
     @media (min-width: 1200px) {
       background-attachment: fixed;
       background-position: center;
