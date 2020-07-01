@@ -11,7 +11,12 @@ import Package from "../components/Package/package"
 import ContactNew from "../components/Contact/contactNew"
 import { Link } from "react-scroll"
 
-import {FaLightbulb, FaProjectDiagram, FaBroadcastTower, FaCarrot} from "react-icons/fa"
+import {
+  FaLightbulb,
+  FaProjectDiagram,
+  FaBroadcastTower,
+  FaCarrot,
+} from "react-icons/fa"
 
 import { IconContext } from "react-icons"
 import { MdDone, MdClear } from "react-icons/md"
@@ -23,19 +28,22 @@ export default () => (
     <Helmet>
       <meta charSet="utf-8" />
       <title>AKTive Ahoi! | AKT 2021</title>
-      <meta name="Description" content="Mit voller Fahrt voraus geht es vom 15. bis 17.01.2021 nach Bremen.
-      Setzen Sie die Segel und seien Sie Teil eines unvergesslichen Wochenendes!"/>
-      <link rel="icon" href="/favicon-16.png" sizes="16x16"/>
-      <link rel="icon" href="/favicon-32.png" sizes="32x32"/>
-      <link rel="icon" href="/favicon-57.png" sizes="57x57"/>
-      <link rel="icon" href="/favicon-76.png" sizes="76x76"/>
-      <link rel="icon" href="/favicon-96.png" sizes="96x96"/>
-      <link rel="icon" href="/favicon-128.png" sizes="128x128"/>
-      <link rel="icon" href="/favicon-192.png" sizes="192x192"/>
-      <link rel="icon" href="/favicon-228.png" sizes="228x228"/>
+      <meta
+        name="Description"
+        content="Mit voller Fahrt voraus geht es vom 15. bis 17.01.2021 nach Bremen.
+      Setzen Sie die Segel und seien Sie Teil eines unvergesslichen Wochenendes!"
+      />
+      <link rel="icon" href="/favicon-16.png" sizes="16x16" />
+      <link rel="icon" href="/favicon-32.png" sizes="32x32" />
+      <link rel="icon" href="/favicon-57.png" sizes="57x57" />
+      <link rel="icon" href="/favicon-76.png" sizes="76x76" />
+      <link rel="icon" href="/favicon-96.png" sizes="96x96" />
+      <link rel="icon" href="/favicon-128.png" sizes="128x128" />
+      <link rel="icon" href="/favicon-192.png" sizes="192x192" />
+      <link rel="icon" href="/favicon-228.png" sizes="228x228" />
     </Helmet>
     <Layout>
-      <Banner id="banner"/>
+      <Banner id="banner" />
       <TextBlock
         id="about"
         title="AKTive Ahoi!"
@@ -60,22 +68,13 @@ export default () => (
           value={{
             //size: "auto",
             className: "icon",
-            style: {verticalAlign: "middle"}
+            style: { verticalAlign: "middle" },
           }}
         >
           <div className="flex-container trio-block">
-            <Perk
-              img=<FaLightbulb />
-              title="Talentsuche"
-            />
-            <Perk
-              img=<FaBroadcastTower />
-            title="Vergrößern der Reichweite"
-            />
-            <Perk
-              img=<FaProjectDiagram />
-              title="Netzwerken"
-            />
+            <Perk img=<FaLightbulb /> title="Talentsuche" />
+            <Perk img=<FaBroadcastTower /> title="Vergrößern der Reichweite" />
+            <Perk img=<FaProjectDiagram /> title="Netzwerken" />
             <Perk
               img=<FaCarrot />
               title="Attraktivitäts- steigerung als Arbeitgeber"
@@ -83,10 +82,7 @@ export default () => (
           </div>
         </IconContext.Provider>
       </TextBlockImg>
-      <TextBlock
-        id="program"
-        title="Das Programm"
-      >
+      <TextBlock id="program" title="Das Programm">
         <table>
           <th>Freitag, 15.01.2021</th>
           <tr>
