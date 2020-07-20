@@ -129,7 +129,7 @@ export default () => (
           value={{
             color: "#7FFF00",
             size: "1.2em",
-            style: { verticalAlign: "middle", marginRight: "5px" },
+            style: { verticalAlign: "middle" },
           }}
         >
           <Package
