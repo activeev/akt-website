@@ -9,21 +9,13 @@ const Footer = () => {
         Copyright &copy; 2020 Active e. V. All Rights Reserved
       </div>
       <div className="credit">
-        Designed by{" "}
+        Designed & developed by{" "}
         <a
           href="https://www.active-bremen.de"
           target="_blank"
           rel="noopener noreferrer"
         >
           Active e. V.
-        </a>{" "}
-        & developed by{" "}
-        <a
-          href="http://www.morganbaker.dev"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Morgan
         </a>
       </div>
       {socialIcons.map((item, index) => {
