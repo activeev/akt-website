@@ -172,102 +172,21 @@ export default () => (
                   </td>
                   <td className="linethrough">Business Dinner</td>
                 </tr>
-                <tr>
-                  <td>
-                    <MdClose color="red" />
-                  </td>
-                  <td className="linethrough">
-                    Instagram- und Facebook-Promotion
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdClose color="red" />
-                  </td>
-                  <td className="linethrough">Unternehmenspräsentation</td>
-                </tr>
+                {/*<tr>*/}
+                {/*  <td>*/}
+                {/*    <MdClose color="red" />*/}
+                {/*  </td>*/}
+                {/*  <td className="linethrough">*/}
+                {/*    Instagram- und Facebook-Promotion*/}
+                {/*  </td>*/}
+                {/*</tr>*/}
+                {/*<tr>*/}
+                {/*  <td>*/}
+                {/*    <MdClose color="red" />*/}
+                {/*  </td>*/}
+                {/*  <td className="linethrough">Unternehmenspräsentation</td>*/}
+                {/*</tr>*/}
               </tbody>
-              <tfoot>
-                <tr>
-                  <td/>
-                  <td>- Zubuchbar -</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdAdd />
-                  </td>
-                  <td>Business Night</td>
-                </tr>
-              </tfoot>
-            </table>
-          </Package>
-          <Package
-            title="Kapitän"
-            active={true}
-            description="Nutzen Sie die Chance, nicht nur direkten Zugang zu zukünftigen Arbeitnehmern zu schaffen,
-            sondern auch die Möglichkeit, durch Bühnenpräsenz einen bleibenden Eindruck zu hinterlassen. Seien Sie
-            außerdem durch laufende Print- und Online-Werbung durchgehend auf dem AKT präsent. Ihr persönlicher Platz
-            auf der Brücke, hart am Wind und mit Kurs auf den Horizont."
-            linkTo="contact"
-            cta="Jetzt anfragen"
-          >
-            <table>
-              <tbody>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Logo auf Teilnehmerbadges</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Printwerbung und Giveaways in Begrüßungstüten</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Präsenz in der AKT-App</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Stellenanzeige online und offline</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Business Dinner</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Instagram- und Facebook-Promotion</td>
-                </tr>
-                <tr>
-                  <td>
-                    <MdCheck />
-                  </td>
-                  <td>Unternehmenspräsentation</td>
-                </tr>
-              </tbody>
-              <tfoot>
-              <tr>
-                <td/>
-                <td>- Zubuchbar -</td>
-              </tr>
-              <tr>
-                <td>
-                  <MdAdd />
-                </td>
-                <td>Business Night</td>
-              </tr>
-              </tfoot>
             </table>
           </Package>
           <Package
@@ -326,17 +245,74 @@ export default () => (
                   <td className="linethrough">Unternehmenspräsentation</td>
                 </tr>
               </tbody>
+            </table>
+          </Package>
+          <Package
+            title="Kapitän"
+            active={true}
+            description="Nutzen Sie die Chance, nicht nur direkten Zugang zu zukünftigen Arbeitnehmern zu schaffen,
+            sondern auch die Möglichkeit, durch Bühnenpräsenz einen bleibenden Eindruck zu hinterlassen. Seien Sie
+            außerdem durch laufende Print- und Online-Werbung durchgehend auf dem AKT präsent. Ihr persönlicher Platz
+            auf der Brücke, hart am Wind und mit Kurs auf den Horizont."
+            linkTo="contact"
+            cta="Jetzt anfragen"
+          >
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Logo auf Teilnehmerbadges</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Printwerbung und Giveaways in Begrüßungstüten</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Präsenz in der AKT-App</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Stellenanzeige online und offline</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Business Dinner</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Instagram- und Facebook-Promotion</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdCheck />
+                  </td>
+                  <td>Unternehmenspräsentation</td>
+                </tr>
+              </tbody>
               <tfoot>
-              <tr>
-                <td/>
-                <td>- Zubuchbar -</td>
-              </tr>
-              <tr>
-                <td>
-                  <MdAdd/>
-                </td>
-                <td>Business Night</td>
-              </tr>
+                <tr>
+                  <td />
+                  <td>- Zubuchbar -</td>
+                </tr>
+                <tr>
+                  <td>
+                    <MdAdd />
+                  </td>
+                  <td>Company Night</td>
+                </tr>
               </tfoot>
             </table>
           </Package>
