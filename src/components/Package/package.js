@@ -100,7 +100,7 @@ const PackageWrapper = styled.article`
         padding-left: 0.2rem;
       }
       tr > .linethrough {
-        text-decoration: line-through;
+        //text-decoration: line-through;
         opacity: 0.4;
       }
 
@@ -122,9 +122,40 @@ const PackageWrapper = styled.article`
     }
   }
 
-    .content {
-      filter: brightness(1.3);
-    }
+  //&.not-active {
+  //  button {
+  //    background: transparent;
+  //    border: 1px solid rgb(0, 183, 255);
+  //  }
+  //}
+  //
+  //&.active {
+  //  order: 1;
+  //  z-index: 3;
+  //
+  //  @media (min-width: 992px) {
+  //    order: 0;
+  //    /*transform: scale(1.25);*/
+  //  }
+  //
+  //  .content {
+  //    filter: brightness(1.3);
+  //  }
+  //
+  //  &::before {
+  //    content: "";
+  //    position: absolute;
+  //    top: -5px;
+  //    right: 0px;
+  //    bottom: -5px;
+  //    left: 0px;
+  //    background: linear-gradient(to right, rgb(0, 183, 255), rgb(72, 0, 255));
+  //    z-index: -1;
+  //    transform: skew(3deg, 3deg);
+  //    border-radius: 4px;
+  //  }
+  //}
+`
 
 const AccordionWrapper = styled.div`
    {

@@ -7,7 +7,7 @@ import BackgroundImage from "gatsby-background-image"
 const Packages = ({ title, para, children, id }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
+      file(relativePath: { eq: "sailboat-1.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
             ...GatsbyImageSharpFluid_withWebp
@@ -56,6 +56,60 @@ const PackagesWrapper = styled.section`
 
     @media (min-width: 992px) {
       flex-direction: row;
+    }
+
+    & > article {
+      :nth-last-child(1) {
+        ::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: 0px;
+          bottom: -5px;
+          left: 0px;
+          background: linear-gradient(
+            to right,
+            rgb(0, 183, 255),
+            rgb(72, 0, 255)
+          );
+          z-index: -1;
+          transform: skew(3deg, 3deg);
+          border-radius: 4px;
+        }
+        .content {
+          filter: brightness(1.3);
+        }
+      }
+
+      :nth-last-child(2) {
+        ::before {
+          content: "";
+          position: absolute;
+          top: -5px;
+          right: 0px;
+          bottom: -5px;
+          left: 0px;
+          background: linear-gradient(
+            to right,
+            rgb(0, 183, 255),
+            rgb(72, 0, 255)
+          );
+          z-index: -1;
+          transform: skew(1.5deg, 1.5deg);
+          border-radius: 4px;
+        }
+        //button {
+        //  background: transparent;
+        //  border: 1px solid rgb(0, 183, 255);
+        //}
+      }
+
+      :nth-last-child(3) {
+        button {
+          background: transparent;
+          border: 1px solid rgb(0, 183, 255);
+        }
+      }
     }
   }
 `
