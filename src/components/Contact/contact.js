@@ -9,18 +9,13 @@ import { graphql, useStaticQuery } from "gatsby"
 const Contact = ({ title, subtitle, id, name, position, mail, phone }) => {
   const data = useStaticQuery(graphql`
     query {
-      img1: file(relativePath: { eq: "boat-person-wave.jpg" }) {
+      img1: file(relativePath: { eq: "sailboat-1.jpg" }) {
         childImageSharp {
           fluid(
             maxWidth: 2000
             quality: 90
             cropFocus: NORTHEAST
-          ) #                      duotone: {
-          #                          highlight: "#00b7ff",
-          #                          shadow: "#4800ff",
-          #                          opacity: 30
-          #                      }
-          {
+          ) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
