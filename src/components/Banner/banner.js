@@ -9,12 +9,12 @@ import { motion } from "framer-motion"
 const Banner = ({ id }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "sailboats-2-cropped.jpg" }) {
+      file(relativePath: { eq: "sailboats-4.jpg" }) {
         childImageSharp {
           fluid(
             maxWidth: 2000
             quality: 90
-            cropFocus: SOUTH
+            cropFocus: NORTH
           ) #              duotone: {
           #                  highlight: "#4800ff",
           #                  shadow: "#00b7ff",
@@ -75,7 +75,7 @@ const BannerWrapper = styled.section`
   .hero-content {
     height: 100vh;
     text-align: center;
-    #height: 100%;
+    //height: 100%;
     width: 100%;
     max-width: 400px;
     padding: 0 20px;
