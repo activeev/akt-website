@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet"
 import Layout from "../components/layout"
 import Banner from "../components/Banner/banner"
 import TextBlock from "../components/TextBlock/textBlock"
+import TimeTable from "../components/timetable/timetable"
 import TextBlockImg from "../components/TextBlockImg/textBlockImg"
 import Perk from "../components/Perk/perk"
 import Button from "../components/Button/button"
@@ -15,7 +16,7 @@ import {
   FaLightbulb,
   FaProjectDiagram,
   FaBroadcastTower,
-  FaCarrot,
+  FaMagnet,
 } from "react-icons/fa"
 
 import { IconContext } from "react-icons"
@@ -42,82 +43,77 @@ export default () => (
     </Helmet>
     <Layout>
       <Banner id="banner" />
-      <TextBlock
-        id="about"
-        title="AKTive Ahoi!"
-        paragraph="Mit voller Fahrt voraus geht es vom 15. - 17.01.2021 nach Bremen zu dem Arbeitskreistreffen des BDSU.
+      <div id="event">
+        <TextBlock
+          id="about"
+          title="AKTive Ahoi!"
+          paragraph="Mit voller Fahrt voraus geht es vom 15. - 17.01.2021 nach Bremen zu dem Arbeitskreistreffen des BDSU.
         Das Treffen bietet Ihnen die Möglichkeit, talentierte studentische Unternehmensberater*innen kennenzulernen und
         die Bekanntheit Ihres Unternehmens zu steigern.
         Starten Sie das Jahr gemeinsam mit motivierten, arbeitseifrigen Studierenden aus ganz Deutschland.
         Setzen Sie die Segel Richtung Bremen und seien Sie Teil
         eines unvergesslichen Wochenendes!"
-      >
-        <Link to="perks" smooth={true} duration={500}>
-          <Button cta="Mehr erfahren" />
-        </Link>
-      </TextBlock>
-      <TextBlockImg
-        id="perks"
-        title="Ihre Vorteile"
-        subtitle="Nutzen Sie die Veranstaltung als Werbeplattform für Ihr Unternehmen und hinterlassen Sie einen
-                  bleibenden Eindruck bei unseren Berater*innen!"
-      >
-        <IconContext.Provider
-          value={{
-            //size: "auto",
-            className: "icon",
-            style: { verticalAlign: "middle" },
-          }}
         >
-          <div className="flex-container trio-block">
+          <Link to="perks" smooth={true} duration={500}>
+            <Button cta="Mehr erfahren" />
+          </Link>
+        </TextBlock>
+        <TextBlockImg
+          id="perks"
+          title="Ihre Vorteile"
+          subtitle="Nutzen Sie die Veranstaltung als Werbeplattform für Ihr Unternehmen und hinterlassen Sie einen
+                  bleibenden Eindruck bei unseren Berater*innen!"
+          columns={2}
+        >
+          <IconContext.Provider
+            value={{
+              //size: "auto",
+              className: "icon text-scaling",
+              style: { verticalAlign: "middle" },
+            }}
+          >
             <Perk img=<FaLightbulb /> title="Talentsuche" />
             <Perk img=<FaBroadcastTower /> title="Vergrößern der Reichweite" />
             <Perk img=<FaProjectDiagram /> title="Netzwerken" />
             <Perk
-              img=<FaCarrot />
-              title="Attraktivitäts- steigerung als Arbeitgeber"
+              img=<FaMagnet />
+              title="Attraktivitätssteigerung als Arbeitgeber"
             />
-          </div>
-        </IconContext.Provider>
-      </TextBlockImg>
-      <TextBlock id="program" title="Das Programm">
-        <table>
-          <th>Freitag, 15.01.2021</th>
-          <tr>
-            <td>14.00</td>
-            <td>Eröffnungsplenum</td>
-          </tr>
-          <tr>
-            <td>20.00</td>
-            <td>Company Night</td>
-          </tr>
-          <th>Samstag, 16.01.2021</th>
-          <tr>
-            <td>10.00</td>
-            <td>Workshops</td>
-          </tr>
-          <tr>
-            <td>15.00</td>
-            <td>JE2JE</td>
-          </tr>
-          <tr>
-            <td>19.00</td>
-            <td>Business Dinner</td>
-          </tr>
-          <tr>
-            <td>21.00</td>
-            <td>Mottoparty</td>
-          </tr>
-          <th>Sonntag, 17.01.2021</th>
-          <tr>
-            <td>10.00</td>
-            <td>Abschlussplenum</td>
-          </tr>
-        </table>
-        <Link to="packages" smooth={true} duration={500}>
-          <Button cta="Mehr erfahren" />
-        </Link>
-      </TextBlock>
+          </IconContext.Provider>
+        </TextBlockImg>
+      </div>
+
+      <TimeTable
+        id="program"
+        title="Das Programm"
+        to="packages"
+        cta="Mehr erfahren"
+        columns={2}
+      >
+        <div className="timetable-day">
+          <h4>Freitag, 15.01.2021</h4>
+          <p>14.00</p>
+          <p>Eröffnungsplenum</p>
+          <p>20.00</p>
+          <p>Company Night</p>
+        </div>
+        <div className="timetable-day">
+          <h4>Samstag, 16.01.2021</h4>
+          <p>10.00</p>
+          <p>Workshops</p>
+          <p>15.00</p>
+          <p>JE2JE</p>
+          <p>19.00</p>
+          <p>Business Dinner</p>
+          <p>21.00</p>
+          <p>Mottoparty</p>
+        </div>
+        <div className="timetable-day">
+          <h4>Sonntag, 17.01.2021</h4>
+          <p>10.00</p>
+          <p>Abschlussplenum</p>
+        </div>
+      </TimeTable>
 
       <Packages
         id="packages"
