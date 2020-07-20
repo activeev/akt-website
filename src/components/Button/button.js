@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
-const Button = props => {
+const Button = (props) => {
   return (
     <>
       {props.anchor ? (
@@ -49,7 +49,6 @@ const ButtonWrapper = styled.button`
       content: "";
       filter: blur(20px);
       opacity: 1;
-      animation: animate 8s linear infinite;
       animation: animate 8s linear infinite;
     }
   }
