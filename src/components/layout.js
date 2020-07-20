@@ -21,7 +21,6 @@ const LayoutWrapper = styled.div`
 
   font-family: Tahoma, Verdana, Segoe, sans-serif;
   color: rgb(15, 30, 72);
-  /* background-color: #060c21; */
   #background: linear-gradient(45deg, #060c21, #0d0139);
   background: #fff;
 
@@ -70,9 +69,23 @@ const LayoutWrapper = styled.div`
     }
   }
 
+  h4 {
+    font-size: 1.1rem;
+
+    @media (min-width: 768px) {
+      font-size: 1.2rem;
+      line-height: 1.1;
+    }
+
+    @media (min-width: 1080px) {
+      font-size: 1.4rem;
+    }
+  }
+
   p,
   tr,
-  th {
+  th,
+  .text-scaling {
     font-size: 1rem;
     line-height: 1.45;
     margin: 1rem 0;
@@ -110,6 +123,9 @@ const LayoutWrapper = styled.div`
 
       @media (min-width: 992px) {
         flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 490px;
+        margin: 0 auto;
       }
     }
   }
