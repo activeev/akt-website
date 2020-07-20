@@ -10,8 +10,8 @@ module.exports = {
   siteMetadata: {
     title: "AKTive Ahoi! | AKT 2021",
     author: "Active Bremen e. V.",
-    image: "/yellow-metal-design-decoration.jpg",
-    siteUrl: "https://www.morganbaker.dev",
+    // image: "/yellow-metal-design-decoration.jpg",
+    // siteUrl: "https://www.morganbaker.dev",
   },
   plugins: [
     {
@@ -22,7 +22,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 75,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
   ],
