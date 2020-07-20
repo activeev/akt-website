@@ -3,10 +3,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 import styled from "styled-components"
 
-const TextBlockImg = ({ title, children, subtitle, id }) => {
+const TextBlockImg = ({ title, children, subtitle, id, columns }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "boat-person-wave-cropped.jpg" }) {
+      file(relativePath: { eq: "cropped.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
             ...GatsbyImageSharpFluid_withWebp
@@ -22,11 +22,11 @@ const TextBlockImg = ({ title, children, subtitle, id }) => {
       className="parallax-image"
       fluid={data.file.childImageSharp.fluid}
     >
-      <TextBlockImgWrapper>
+      <TextBlockImgWrapper columns={columns}>
         <div className="content-container">
           <h2>{title}</h2>
           <p>{subtitle}</p>
-          {children}
+          <div className="children">{children}</div>
         </div>
       </TextBlockImgWrapper>
     </BackgroundImage>
@@ -44,19 +44,25 @@ const TextBlockImgWrapper = styled.section`
       max-width: 650px;
     }
 
-    @media (min-width: 1200px) {
-      max-width: 900px;
-    }
-  }
-
-  h2 {
-    // background: -webkit-linear-gradient(45deg, #f441a5, #03a9f4);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
+    //@media (min-width: 1200px) {
+    //  max-width: 900px;
+    //}
   }
 
   p {
     margin-bottom: 50px;
+  }
+
+  .children {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    align-content: center;
+    justify-content: center;
+
+    @media (min-width: 450px) {
+      grid-template-columns: ${(props) => " 1fr".repeat(props.columns)};
+    }
   }
 `
 
