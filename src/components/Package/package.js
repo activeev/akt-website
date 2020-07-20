@@ -3,13 +3,13 @@ import styled from "styled-components"
 import Button from "../Button/button"
 import { Link } from "react-scroll"
 import { motion, AnimatePresence } from "framer-motion"
-import { MdUnfoldMore, MdUnfoldLess } from "react-icons/md"
+import { MdExpandMore, MdExpandLess } from "react-icons/md"
 
 const Accordion = ({ i, expanded, children }) => {
   const isOpen = i === expanded
 
   return (
-    <>
+    <AccordionWrapper>
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
@@ -28,7 +28,7 @@ const Accordion = ({ i, expanded, children }) => {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+    </AccordionWrapper>
   )
 }
 
@@ -46,9 +46,23 @@ const Package = ({ title, active, description, cta, linkTo, children }) => {
           <Accordion i={1} expanded={expanded}>
             <p>{description}</p>
           </Accordion>
-          <p onClick={() => setExpanded(expanded === 0 ? 1 : 0)}>
-            {expanded === 0 ? <MdUnfoldMore color="white"/> : <MdUnfoldLess color="white"/>}
-          </p>
+          <button
+            onClick={() => setExpanded(expanded === 0 ? 1 : 0)}
+            type="button"
+            className="text-scaling"
+          >
+            {expanded === 0 ? (
+              <>
+                <MdExpandLess color="white" />
+                Mehr
+              </>
+            ) : (
+              <>
+                <MdExpandMore color="white" />
+                Weniger
+              </>
+            )}
+          </button>
         </div>
         <Link to={linkTo} smooth={true} duration={500}>
           <Button cta={cta} />
@@ -67,7 +81,6 @@ const PackageWrapper = styled.article`
 
   @media (min-width: 992px) {
     width: calc(100% / 3);
-    margin-bottom: 0;
     margin: 0 1rem;
   }
 
@@ -84,13 +97,13 @@ const PackageWrapper = styled.article`
 
       tr > td {
         line-height: 26px;
-        padding-left: 0.5rem;
+        padding-left: 0.2rem;
       }
       tr > .linethrough {
         text-decoration: line-through;
         opacity: 0.4;
       }
-      
+
       tfoot > tr:first-child > td {
         padding-top: 1em;
         padding-bottom: 0.2em;
@@ -98,44 +111,25 @@ const PackageWrapper = styled.article`
     }
   }
 
-  .accordion {
-    overflow-y: hidden;
-  }
   .accordion-container {
     margin: 2.5rem 0;
-  }
 
-  &.not-active {
     button {
-      background: transparent;
-      border: 1px solid rgb(0, 183, 255);
+      border: none !important;
+      background-color: transparent !important;
+      color: #fff;
+      font-size: 1.2rem;
     }
   }
-
-  &.active {
-    order: 1;
-    z-index: 3;
-
-    @media (min-width: 992px) {
-      order: 0;
-      /*transform: scale(1.25);*/
-    }
 
     .content {
       filter: brightness(1.3);
     }
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -5px;
-      right: 0px;
-      bottom: -5px;
-      left: 0px;
-      background: linear-gradient(to right, rgb(0, 183, 255), rgb(72, 0, 255));
-      z-index: -1;
-      transform: skew(3deg, 3deg);
-      border-radius: 4px;
+const AccordionWrapper = styled.div`
+   {
+    .accordion {
+      overflow-y: hidden;
     }
   }
 `
