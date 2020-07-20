@@ -320,12 +320,15 @@ export default () => (
       </Packages>
       <ContactNew
         id="contact"
-        title="Interesse?"
-        subtitle="Heuern Sie an in unserem Kontaktbüro!"
+        title="Kommen Sie an Bord"
+        subtitle="Bei Fragen steht Ihnen unsere Crew zur Seite"
         name="Pia Franke"
         position="Admiral (Projektleitung)"
-        phone="+49 176 9839 2363"
-        mail="pia.franke@active-bremen.de"
+        phone="+49 1567 8347573"
+        mailTo="akt@active-bremen.de"
+        mailCc="pia.franke@active-bremen.de"
+        subject="[AKT 2021] Anfrage von Musterfirma"
+        body="Sehr%20geehrte%20Frau%20Franke,%0A%0A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A%0AErika%20Musterfrau"
       />
     </Layout>
   </>
