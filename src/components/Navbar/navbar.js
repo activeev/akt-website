@@ -21,7 +21,7 @@ const Navbar = () => {
   `)
 
   const toggleNav = () => {
-    setNav(isOpen => !isOpen)
+    setNav((isOpen) => !isOpen)
   }
   const disableNav = () => {
     setNav(false)
@@ -46,33 +46,33 @@ const Navbar = () => {
           <span></span>
         </button>
       </div>
-      <ul
+      <div
         className={isOpen ? `${"nav-links"} ${"show-nav"}` : `${"nav-links"}`}
-        onClick={disableNav}
       >
         {links.map((item, index) => {
           return (
-            <li key={index}>
-              <Link
-                activeClass="active"
-                to={item.path}
-                spy={true}
-                smooth={true}
-                duration={500}
-                offset={-50}
-                onClick={disableNav}
-              >
-                {item.text}
-              </Link>
-            </li>
+            // <li key={index}>
+            <Link
+              activeClass="active"
+              to={item.path}
+              spy={true}
+              smooth={true}
+              duration={500}
+              offset={-50}
+              onClick={disableNav}
+            >
+              {item.text}
+            </Link>
+            // </li>
           )
         })}
-      </ul>
+      </div>
     </NavWrapper>
   )
 }
 
-const NavWrapper = styled.nav`
+const NavWrapper = styled.div`
+  pointer-events: none;
   position: fixed;
   z-index: 10;
   top: 0;
@@ -90,16 +90,13 @@ const NavWrapper = styled.nav`
 
     img,
     .logo {
-      //width: 90px;
       width: 90px;
 
       @media (min-width: 768px) {
-        //width: 100px;
         width: 140px;
       }
 
       @media (min-width: 1200px) {
-        //width: 120px;
         width: 170px;
       }
     }
@@ -111,11 +108,6 @@ const NavWrapper = styled.nav`
     justify-content: center;
     position: fixed;
     text-align: center;
-    //background: linear-gradient(45deg, #060c21, #0d0139);
-    //background: linear-gradient(45deg, rgb(72,0,255), rgb(0,183,255));
-    //background: rgb(140,164,232);
-    //background: #fff;
-    //opacity: 0.9;
     background: radial-gradient(
       closest-side at 50% 50%,
       rgba(255, 255, 255, 1),
@@ -132,30 +124,25 @@ const NavWrapper = styled.nav`
     list-style: none;
     padding-left: 0;
 
-    li {
-      list-style: none;
+    pointer-events: auto;
+
+    a {
       font-size: 1.25rem;
       font-weight: 400;
       margin-left: 0;
       padding: 0.75rem 0;
-      a {
-        text-decoration: none;
-        text-transform: capitalize;
-        color: rgb(15, 30, 72);
-        transition: 0.3s;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: #0f1e48;
+      transition: 0.3s;
 
-        &.active {
-          // color: #e609b5;
-          filter: brightness(3);
-        }
+      &.active {
+        filter: brightness(3);
       }
+
       &:hover {
         cursor: pointer;
-        a {
-          // color: #e609b5;
-          // color: #fff;
-          filter: brightness(3);
-        }
+        filter: brightness(3);
       }
     }
 
@@ -172,6 +159,8 @@ const NavWrapper = styled.nav`
     background-color: #fff;
     border-radius: 50%;
     border: none;
+
+    pointer-events: auto;
 
     span {
       display: block;
@@ -219,15 +208,26 @@ const NavWrapper = styled.nav`
     }
 
     .nav-links {
-      background: transparent;
+      //background: transparent;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: calc(1em + 0.75rem);
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+      align-items: center;
+
       flex-direction: row;
       margin-left: auto;
       position: relative;
       transform: translateX(0);
       transition: none;
 
-      li {
-        margin-left: 1rem;
+      a {
+        margin: 0 0.5rem;
+
+        svg {
+          margin: 10% 0;
+          vertical-align: middle;
+        }
       }
     }
   }
