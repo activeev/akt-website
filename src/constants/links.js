@@ -1,11 +1,14 @@
+import React from "react"
+import { FaHome } from "react-icons/fa"
+
 export default [
   {
     path: "banner",
-    text: "home",
+    text: <FaHome />,
   },
   {
-    path: "about",
-    text: "Über",
+    path: "event",
+    text: "Event",
   },
   {
     path: "program",
