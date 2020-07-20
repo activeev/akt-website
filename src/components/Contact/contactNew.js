@@ -3,7 +3,18 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
-const ContactNew = ({ title, subtitle, id, name, position, mail, phone }) => {
+const ContactNew = ({
+  title,
+  subtitle,
+  id,
+  name,
+  position,
+  phone,
+  mailTo,
+  mailCc,
+  subject,
+  body,
+}) => {
   const data = useStaticQuery(graphql`
     query {
       file(relativePath: { eq: "contact.jpg" }) {
@@ -31,9 +42,9 @@ const ContactNew = ({ title, subtitle, id, name, position, mail, phone }) => {
             </p>
             <p>
               <a
-                href={`mailto:${mail}?subject=[AKT 2021] Anfrage von&cc=akt@active-bremen.de&body=Sehr%20geehrte%20Frau%20Franke,%0A%0A%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen%0A%0AErika%20Musterfrau`}
+                href={`mailto:${mailTo}?cc=${mailCc}&subject=${subject}&body=${body}`}
               >
-                {mail}
+                {mailTo}
               </a>
             </p>
           </div>
@@ -73,11 +84,10 @@ const ContactWrapper = styled.section`
       }
     }
     .contact-card {
-      //width: 100%;
       background-color: #fff;
       margin: 0 auto;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       flex-direction: column;
 
@@ -103,6 +113,15 @@ const ContactWrapper = styled.section`
         & p {
           line-height: 1;
           margin: 1rem 2rem;
+        }
+
+        a {
+          text-decoration: none;
+          background: linear-gradient(45deg, rgb(72, 0, 255), rgb(0, 183, 255));
+          background-clip: text;
+          -webkit-background-clip: text;
+          text-fill-color: transparent;
+          -webkit-text-fill-color: transparent;
         }
       }
     }
