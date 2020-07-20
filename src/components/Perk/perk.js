@@ -30,7 +30,7 @@ const Perk = ({ img, alt, title, content }) => {
         {/*<img src={img} alt={alt} />*/}
         {img}
         <h3>{title}</h3>
-        <p>{content}</p>
+        {content !== undefined ? <p>{content}</p> : null}
       </PerkWrapper>
     </motion.div>
   )
@@ -38,14 +38,14 @@ const Perk = ({ img, alt, title, content }) => {
 
 const PerkWrapper = styled.article`
   padding: 1rem;
-  max-width: 260px;
+  max-width: 300px;
   margin: 0 auto;
 
   .icon {
     box-sizing: border-box;
     /* height: 6em;
     width: auto; */
-    height: 9vmin;
+    height: 5em;
     width: auto;
 
     @media (min-width: 992px) {
