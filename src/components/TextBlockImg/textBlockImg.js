@@ -6,7 +6,7 @@ import styled from "styled-components"
 const TextBlockImg = ({ title, children, subtitle, id, columns }) => {
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "cropped.jpeg" }) {
+      file(relativePath: { eq: "sailboats-1-cropped.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
             ...GatsbyImageSharpFluid_withWebp
