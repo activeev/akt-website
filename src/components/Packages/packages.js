@@ -9,7 +9,7 @@ const Packages = ({ title, para, children, id }) => {
     query {
       file(relativePath: { eq: "sailboat-1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
+          fluid(maxWidth: 2560, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

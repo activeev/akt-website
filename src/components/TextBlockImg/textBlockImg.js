@@ -8,7 +8,7 @@ const TextBlockImg = ({ title, children, subtitle, id, columns }) => {
     query {
       file(relativePath: { eq: "sailboats-1-cropped.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, quality: 90, cropFocus: SOUTH) {
+          fluid(maxWidth: 2560, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

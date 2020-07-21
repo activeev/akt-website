@@ -11,16 +11,7 @@ const Banner = ({ id }) => {
     query {
       file(relativePath: { eq: "sailboats-4.jpg" }) {
         childImageSharp {
-          fluid(
-            maxWidth: 2000
-            quality: 90
-            cropFocus: NORTH
-          ) #              duotone: {
-          #                  highlight: "#4800ff",
-          #                  shadow: "#00b7ff",
-          #                  opacity: 20
-          #              }
-          {
+          fluid(maxWidth: 2560, quality: 90) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
