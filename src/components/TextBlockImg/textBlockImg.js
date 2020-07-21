@@ -16,24 +16,23 @@ const TextBlockImg = ({ title, children, subtitle, id, columns }) => {
     }
   `)
   return (
-    <BackgroundImage
+    <BackgroundImageWrapper
       id={id}
       Tag="section"
       className="parallax-image"
       fluid={data.file.childImageSharp.fluid}
+      columns={columns}
     >
-      <TextBlockImgWrapper columns={columns}>
-        <div className="content-container">
-          <h2>{title}</h2>
-          <p>{subtitle}</p>
-          <div className="children">{children}</div>
-        </div>
-      </TextBlockImgWrapper>
-    </BackgroundImage>
+      <div className="content-container">
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+        <div className="children">{children}</div>
+      </div>
+    </BackgroundImageWrapper>
   )
 }
 
-const TextBlockImgWrapper = styled.section`
+const BackgroundImageWrapper = styled(BackgroundImage)`
   text-align: center;
   padding: 100px 30px;
 
