@@ -23,6 +23,7 @@ const Packages = ({ title, para, children, id }) => {
       Tag="section"
       className="parallax-image"
       fluid={data.file.childImageSharp.fluid}
+      alt="View from a Sailboat"
     >
       <PackagesWrapper>
         <div className="text-area">

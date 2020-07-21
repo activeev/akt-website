@@ -22,6 +22,7 @@ const TextBlockImg = ({ title, children, subtitle, id, columns }) => {
       className="parallax-image"
       fluid={data.file.childImageSharp.fluid}
       columns={columns}
+      alt="Sailboats sailing from behind"
     >
       <div className="content-container">
         <h2>{title}</h2>
