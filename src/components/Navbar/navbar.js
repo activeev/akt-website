@@ -53,6 +53,7 @@ const Navbar = () => {
           return (
             // <li key={index}>
             <Link
+              key={index}
               activeClass="active"
               to={item.path}
               spy={true}
