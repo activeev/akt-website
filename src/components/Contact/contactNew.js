@@ -20,7 +20,7 @@ const ContactNew = ({
       file(relativePath: { eq: "contact.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 900, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
