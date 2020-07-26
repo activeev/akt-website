@@ -91,14 +91,14 @@ export default () => (
         columns={2}
       >
         <div className="timetable-day">
-          <h4>Freitag, 15.01.2021</h4>
+          <h3>Freitag, 15.01.2021</h3>
           <p>14.00</p>
           <p>Eröffnungsplenum</p>
           <p>20.00</p>
           <p>Company Night</p>
         </div>
         <div className="timetable-day">
-          <h4>Samstag, 16.01.2021</h4>
+          <h3>Samstag, 16.01.2021</h3>
           <p>10.00</p>
           <p>Workshops</p>
           <p>15.00</p>
@@ -109,7 +109,7 @@ export default () => (
           <p>Mottoparty</p>
         </div>
         <div className="timetable-day">
-          <h4>Sonntag, 17.01.2021</h4>
+          <h3>Sonntag, 17.01.2021</h3>
           <p>10.00</p>
           <p>Abschlussplenum</p>
         </div>

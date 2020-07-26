@@ -13,7 +13,7 @@ const Navbar = () => {
       file(relativePath: { eq: "logo-square-transparent.png" }) {
         childImageSharp {
           fluid(maxWidth: 500, quality: 90) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
@@ -40,6 +40,7 @@ const Navbar = () => {
           }
           type="button"
           onClick={toggleNav}
+          aria-label="nav-toggle-button"
         >
           <span></span>
           <span></span>

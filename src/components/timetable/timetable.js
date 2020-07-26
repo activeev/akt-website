@@ -89,9 +89,18 @@ const TimeTableWrapper = styled.section`
         justify-content: center;
       }
 
-      h3,
-      h4 {
+      h3 {
         grid-column: 1 / ${(props) => props.columns + 1};
+        font-size: 1.1rem;
+
+        @media (min-width: 768px) {
+          font-size: 1.2rem;
+          line-height: 1.1;
+        }
+    
+        @media (min-width: 1080px) {
+          font-size: 1.4rem;
+    }
       }
     }
   }
