@@ -24,22 +24,14 @@ import { MdCheck, MdClose, MdAdd } from "react-icons/md"
 
 export default () => (
   <>
-    <Helmet>
-      <meta charSet="utf-8" />
-      <title>AKTive Ahoi! | AKT 2021</title>
-      <meta
-        name="Description"
-        content="Mit voller Fahrt voraus geht es vom 15. bis 17.01.2021 nach Bremen.
-      Setzen Sie die Segel und seien Sie Teil eines unvergesslichen Wochenendes!"
-      />
-      <link rel="icon" href="/favicon-16.png" sizes="16x16" />
-      <link rel="icon" href="/favicon-32.png" sizes="32x32" />
-      <link rel="icon" href="/favicon-57.png" sizes="57x57" />
-      <link rel="icon" href="/favicon-76.png" sizes="76x76" />
-      <link rel="icon" href="/favicon-96.png" sizes="96x96" />
-      <link rel="icon" href="/favicon-128.png" sizes="128x128" />
-      <link rel="icon" href="/favicon-192.png" sizes="192x192" />
-      <link rel="icon" href="/favicon-228.png" sizes="228x228" />
+    <Helmet
+      title="AKTive Ahoi! | AKT 2021"
+      meta={[
+        {name: 'description', content: 'Mit voller Fahrt voraus geht es vom 15. bis 17.01.2021 nach Bremen.\n' +
+            'Setzen Sie die Segel und seien Sie Teil eines unvergesslichen Wochenendes!'},
+      ]}
+    >
+      <html lang="de-DE"/>
     </Helmet>
     <Layout>
       <Banner id="banner" />
