@@ -31,6 +31,7 @@ const Banner = ({ id }) => {
         className="parallax-image full-size-image"
         fluid={data.file.childImageSharp.fluid}
         alt="Harbor full of Sailboats"
+        loading="eager"
       >
         <div className="hero-content">
           <motion.h1

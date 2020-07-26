@@ -30,7 +30,7 @@ const Navbar = () => {
     <NavWrapper>
       <div className="masthead flex-container">
         <div className="logo">
-          <Img fluid={logo.file.childImageSharp.fluid} />
+          <Img fluid={logo.file.childImageSharp.fluid} loading="eager" />
         </div>
         <button
           className={
