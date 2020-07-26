@@ -31,6 +31,26 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `AKT Website`,
+        short_name: `AKT 2020`,
+        start_url: `/`,
+        icon: `src/images/favicon.png`,
+        cache_busting_mode: `none`,
+        lang: `de-DE`,
+        display: `browser`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          globPatterns: [`**/favicon*`]
+        }
+      }
+    },
     `gatsby-plugin-react-helmet`,
   ],
 }
