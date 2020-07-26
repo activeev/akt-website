@@ -97,10 +97,10 @@ const TimeTableWrapper = styled.section`
           font-size: 1.2rem;
           line-height: 1.1;
         }
-    
+
         @media (min-width: 1080px) {
           font-size: 1.4rem;
-    }
+        }
       }
     }
   }

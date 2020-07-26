@@ -10,6 +10,6 @@ export default [
   {
     icon: <FaInstagram />,
     url: "https://www.instagram.com/activebremen",
-    ariaLabel: "Instagram Seite"
+    ariaLabel: "Instagram Seite",
   },
 ]

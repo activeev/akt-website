@@ -11,11 +11,7 @@ const Contact = ({ title, subtitle, id, name, position, mail, phone }) => {
     query {
       img1: file(relativePath: { eq: "sailboat-1.jpg" }) {
         childImageSharp {
-          fluid(
-            maxWidth: 2000
-            quality: 90
-            cropFocus: NORTHEAST
-          ) {
+          fluid(maxWidth: 2000, quality: 90, cropFocus: NORTHEAST) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
